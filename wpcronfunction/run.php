@@ -1,11 +1,9 @@
 <?php
-
-$actual_link = 'https://mywordpressapp.azurewebsites.net';
+//Make a CURL call to wp-cron.php
+$actual_link = 'http://wordpress3295.azurewebsites.net/wp-cron.php';
 echo "running cron =  ".$actual_link."\n";
-
 $response = get_web_page($actual_link);
-print_r($response);
-
+echo $response;
 
 function get_web_page($url) {
     $options = array(
@@ -22,11 +20,8 @@ function get_web_page($url) {
 
     $ch = curl_init($url);
     curl_setopt_array($ch, $options);
-
     $content  = curl_exec($ch);
-
     curl_close($ch);
-
     return $content;
 }
 
