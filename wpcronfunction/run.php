@@ -1,6 +1,6 @@
 <?php
 //Make a CURL call to wp-cron.php
-$actual_link = 'http://wordpress3295.azurewebsites.net/wp-cron.php';
+$actual_link = 'http://wordpress3295.azurewebsites.net/wp-cron.php?doing_wp_cron';
 echo "running cron =  ".$actual_link."\n";
 $response = get_web_page($actual_link);
 echo $response;
